@@ -1,5 +1,13 @@
 import React, { Component } from "react";
+import style from "styled-components";
 import RandomButton from "./RandomButton";
+
+const CenterContent = style.section`
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%);
+`;
 
 class RandomText extends Component {
   constructor(props) {
@@ -35,18 +43,15 @@ class RandomText extends Component {
   }
 
   render() {
-    const centerContent = {
-      left: "50%",
-      position: "absolute",
-      top: "50%",
-      transform: "translate(-50%)"
-    };
-
     return (
-      <div style={centerContent}>
+      <CenterContent>
         <h1>{this.state.randomText}</h1>
-        <RandomButton />
-      </div>
+        <RandomButton
+          playStatus={this.state.playStatus}
+          onPlayRandom={this.startRandomHandler}
+          onStopRandom={this.stopRandomHandler}
+        />
+      </CenterContent>
     );
   }
 }
