@@ -9,6 +9,11 @@ const CenterContent = style.section`
   transform: translate(-50%);
 `;
 
+const Name = style.h1`
+  font-size: 60px;
+  margin: 0;
+`;
+
 class RandomText extends Component {
   constructor(props) {
     super(props);
@@ -45,7 +50,7 @@ class RandomText extends Component {
   render() {
     return (
       <CenterContent>
-        <h1>{this.state.randomText}</h1>
+        <Name>{this.state.randomText}</Name>
         <RandomButton
           playStatus={this.state.playStatus}
           onPlayRandom={this.startRandomHandler}

@@ -8,6 +8,7 @@ const Button = style.button`
   cursor: pointer;
   display: block;
   margin: auto;
+  margin-top: 32px;
   outline: none;
   padding: 12px;
 `;
@@ -25,6 +26,7 @@ class RandomButton extends Component {
     } else {
       this.props.onPlayRandom();
       this.setState({ buttonText: "STOP!" });
+      this.setState({ playStatus: true });
     }
   };
 
