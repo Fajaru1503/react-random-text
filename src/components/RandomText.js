@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import RandomButton from "./RandomButton";
 
 class RandomText extends Component {
   constructor(props) {
@@ -44,6 +45,7 @@ class RandomText extends Component {
     return (
       <div style={centerContent}>
         <h1>{this.state.randomText}</h1>
+        <RandomButton />
       </div>
     );
   }
